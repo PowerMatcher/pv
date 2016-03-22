@@ -13,11 +13,7 @@ import com.mongodb.client.MongoCursor;
 import com.mongodb.client.MongoDatabase;
 
 public class PVDao {
-	/*
-	 * ResourceBundle PropBD = ResourceBundle.getBundle("BD"); String DB =
-	 * PropBD.getString("bd"); String COLLECTION =
-	 * PropBD.getString("COLLECTION");
-	 */
+
 
 	public String getAllPV() {
 		String resList = null;
@@ -75,7 +71,7 @@ public class PVDao {
 			MongoCursor<Document> mongoIT = iterable.iterator();
 			while (mongoIT.hasNext()) {
 				Document doc = mongoIT.next();
-				// System.out.println("doc :"+doc);
+			
 				xml += "<Device><ts>";
 				xml += doc.get("ts");
 				xml += "</ts>";
@@ -96,7 +92,7 @@ public class PVDao {
 
 	public void savePV(long ts, String device_id, double production) {
 		try {
-			// System.out.println("PVDao "+ts+"  "+device_id+"  "+production);
+		
 
 			ResourceBundle PropBD = ResourceBundle.getBundle("BD");
 			String DB = PropBD.getString("bd");
