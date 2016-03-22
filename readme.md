@@ -2,13 +2,13 @@
 
 The source of BeNomad-SmartChargingProvider on Islanding situation ( Microgrid ) web API, http://osm.procan-group.com/PvPanel
 
-This API defines only two operations. For now, these operations  consume parameters in POST request and produce XML in GET as described below. In the next release, the operations will also be able to consume or produce RDF, in conformance with the SEAS knowledge model. SPARQL-Generate protocol will be used to describe how RDF may be generated from XML.
+Two Restful APIs (POST and GET) are provided to consume and produce parameters regarding production of PV panels. These APIs generates  XML as descibed below. In the next release, these APIs will be able to use RDF, in conformance with the SEAS knowledge model. 
 
 + `POST`:
-`curl -X POST -d "ts={ts}&device_id={device_id}&production={production}" http://osm.procan-group.com/PvPanel/rest/pvs` :  the {ts} parameter represent the timestamp of the pv production,the {device_id} parameter represent the id of the pvpanel,the {production} parameter represent the energy production value. Then the server returns a 202 Accepted.
+`curl -X POST -d "ts={ts}&device_id={device_id}&production={production}" http://osm.procan-group.com/PvPanel/rest/pvs` :  the {ts} parameter represents the timestamp of the pv production, the {device_id} parameter represents the id of the pvpanel, the {production} parameter represents the energy production value. Then the server returns a 202 Accepted.
 
 + `GET`:
-`curl -X GET http://osm.procan-group.com/PvPanel/rest/pvs/{device_id}` :the {device_id} parameter represent the id of the pvpanel. Then if the server returns a 200 OK, the HTTP body represents the response PV Panel production  (see below)
+`curl -X GET http://osm.procan-group.com/PvPanel/rest/pvs/{device_id}` :the {device_id} parameter represents the id of the pvpanel. Then if the server returns a 200 OK, the HTTP body represents the response and includes the production of a given PV Panel (see below)
 
 ```
 <PvPanel>
@@ -21,7 +21,7 @@ This API defines only two operations. For now, these operations  consume paramet
 ```
 
 
-`curl -X GET http://osm.procan-group.com/PvPanel/rest/pvs/` : if the server returns a 200 OK, the HTTP body represents the response all PV Panel production  (see below)
+`curl -X GET http://osm.procan-group.com/PvPanel/rest/pvs/` : if the server returns a 200 OK, the HTTP body includes all PV Panels and their productions (see below)
 
 ```
 <PvPanel>
