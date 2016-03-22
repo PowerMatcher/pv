@@ -12,11 +12,11 @@ This API defines only two operations. For now, these operations  consume paramet
 
 ```
      <PvPanel>
-        <Device>
+          <Device>
 		<ts>1458001200</ts>
 		<DeviceId>00031614</DeviceId>
 		<Production>1916.85</Production>
-	</Device>
+	   </Device>
       <PvPanel>
 ```
 
