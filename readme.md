@@ -11,13 +11,13 @@ This API defines only two operations. For now, these operations  consume paramet
 `curl -X GET http://osm.procan-group.com/PvPanel/rest/pvs/{device_id}` :the {device_id} parameter represent the id of the pvpanel. Then if the server returns a 200 OK, the HTTP body represents the response PV Panel production  (see below)
 
 ```
-     <PvPanel>
-          <Device>
-		<ts>1458001200</ts>
-		<DeviceId>00031614</DeviceId>
-		<Production>1916.85</Production>
-	   </Device>
-      <PvPanel>
+<PvPanel>
+  <Device>
+     <ts>1458001200</ts>
+     <DeviceId>00031614</DeviceId>
+     <Production>1916.85</Production>
+   </Device>
+<PvPanel>
 ```
 
 
