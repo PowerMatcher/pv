@@ -8,7 +8,6 @@ This API defines only two operations. For now, these operations  consume paramet
 `curl -X POST -d "ts={ts}&device_id={device_id}&production={production}" http://osm.procan-group.com/PvPanel/rest/pvs` :  the {ts} parameter represent the timestamp of the pv production,the {device_id} parameter represent the id of the pvpanel,the {production} parameter represent the energy production value. Then the server returns a 202 Accepted.
 
 + `GET`:
-
 `curl -X GET http://osm.procan-group.com/PvPanel/rest/pvs/{device_id}` :the {device_id} parameter represent the id of the pvpanel. Then if the server returns a 200 OK, the HTTP body represents the response PV Panel production  (see below)
 
 ```
